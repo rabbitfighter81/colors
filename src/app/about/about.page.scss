@@ -1,0 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.color-swatch {
+  height: 64px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.roundy-thingy {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list-item-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.spacer {
+  flex: 1 0 0;
+}
+
+button {
+  width: 100px;
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Colors</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-list class="list">
+        <ion-item class="list-item" *ngFor="let color of colors; let i = index;">
+          <div class="roundy-thingy" [style.backgroundColor]="color.code"></div>
+          <div class="list-item-column">
+              <h2>{{ color.name }}</h2>
+              <p>{{ color.code }}</p>
+          </div>
+          <span class="spacer"></span>
+          <div class="list-item-column">
+            <ion-button fill="outline" item-end color="dark" (click)="presentLoading()">View</ion-button>
+          </div>
+        </ion-item>
+      </ion-list>
+    
+
+  <!--<ion-card class="color-card" *ngFor="let color of colors; let i = index;" [style.backgroundColor]="color.code">
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ color.name }}
+      </ion-card-title>
+
+      <ion-card-subtitle>
+        {{ color.code }}
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+  </ion-card>-->
+
+</ion-content>
