@@ -24,7 +24,7 @@ export class GetAllColorsFail implements Action {
   constructor(public payload: any) { }
 }
 
-//Get colors by name
+// Get colors by name
 export class GetColor implements Action {
   readonly type = GET_COLOR
   constructor(public payload: string) { }

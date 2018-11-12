@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Actions, Effect } from '@ngrx/effects'
+import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Action } from '@ngrx/store'
 import { Observable, of } from 'rxjs'
 import { map, switchMap, catchError } from 'rxjs/operators'
@@ -13,8 +13,8 @@ export class ColorEffects {
 
   @Effect()
   getAllColors$: Observable<Action> = this.actions$
-    .ofType(ColorActions.GET_ALL_COLORS)
     .pipe(
+      ofType(ColorActions.GET_ALL_COLORS),
       switchMap(() => this.colorService.getColors().
         pipe(
           map((colors: Color[]) => new ColorActions.GetAllColorsSuccess(colors)),
@@ -24,8 +24,8 @@ export class ColorEffects {
 
   @Effect()
   getColorByName: Observable<Action> = this.actions$
-    .ofType(ColorActions.GET_COLOR)
     .pipe(
+      ofType(ColorActions.GET_COLOR),
       map((action: ColorActions.GetColor) => action.payload),
       switchMap((name) => this.colorService.getColor(name).
         pipe(

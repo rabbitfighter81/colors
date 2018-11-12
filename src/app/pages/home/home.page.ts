@@ -1,9 +1,9 @@
 import { LoadingController } from '@ionic/angular'
 import { Color } from './../../state/color/color.model'
 import { Observable } from 'rxjs'
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
-import { Store } from "@ngrx/store"
+import { Store, select } from '@ngrx/store'
 import { AppState } from '../../state/app.reducer'
 
 import * as fromStore from '../../state/app.reducer'
@@ -15,7 +15,7 @@ import { getAllColors, getLoading, getError } from '../../state/color'
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   colors$: Observable<Array<Color>>
   loading$: Observable<boolean>
@@ -25,9 +25,9 @@ export class HomePage {
     private store: Store<fromStore.AppState>,
     public loadingController: LoadingController
   ) {
-    this.colors$ = this.store.select(getAllColors)
-    this.loading$ = this.store.select(getLoading)
-    this.error$ = this.store.select(getError)
+    this.colors$ = this.store.pipe(select(getAllColors))
+    this.loading$ = this.store.pipe(select(getLoading))
+    this.error$ = this.store.pipe(select(getError))
   }
 
   ngOnInit() {
