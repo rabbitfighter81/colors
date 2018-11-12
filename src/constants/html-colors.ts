@@ -1,6 +1,5 @@
-import { HtmlColor } from './../models/html-color.model';
-
-export const HtmlColors: HtmlColor[] = <HtmlColor[]>[
+import { Color } from './../app/state/color/color.model'
+export const HtmlColors: Color[] = <Color[]>[
   { name: 'AliceBlue', code: '#F0F8FF' },
   { name: 'AntiqueWhite', code: '#FAEBD7' },
   { name: 'Aqua', code: '#00FFFF' },
@@ -148,4 +147,4 @@ export const HtmlColors: HtmlColor[] = <HtmlColor[]>[
   { name: 'WhiteSmoke', code: '#F5F5F5' },
   { name: 'Yellow', code: '#FFFF00' },
   { name: 'YellowGreen', code: '#9ACD32' },
-];
+]
