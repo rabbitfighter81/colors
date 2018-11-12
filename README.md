@@ -32,9 +32,9 @@ These are the main nav tabs and the heart of the app
 
 * Home Tab
 * Colors list
-** Color Detail View
+* * Color Detail View
 * Collections list
-** Collection detail
+* * Collection detail
 * 
 
 ## Content Pane
