@@ -1,4 +1,5 @@
 import { Color } from './../app/state/color/color.model'
+
 export const HtmlColors: Color[] = <Color[]>[
   { name: 'AliceBlue', code: '#F0F8FF' },
   { name: 'AntiqueWhite', code: '#FAEBD7' },

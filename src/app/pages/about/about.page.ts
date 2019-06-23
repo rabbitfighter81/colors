@@ -8,15 +8,12 @@ import { LoadingController } from '@ionic/angular'
 @Component({
   selector: 'app-about',
   templateUrl: 'about.page.html',
-  styleUrls: ['about.page.scss']
+  styleUrls: ['about.page.scss'],
 })
 export class AboutPage implements OnInit {
-
   colors: Color[]
 
-  constructor(public loadingController: LoadingController) {
-
-  }
+  constructor(public loadingController: LoadingController) {}
 
   ngOnInit() {
     this.colors = HtmlColors
@@ -25,7 +22,7 @@ export class AboutPage implements OnInit {
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'Hellooo',
-      duration: 2000
+      duration: 2000,
     })
     return await loading.present()
   }
@@ -36,9 +33,8 @@ export class AboutPage implements OnInit {
       duration: 5000,
       message: 'Please wait...',
       translucent: true,
-      cssClass: 'custom-class custom-loading'
+      cssClass: 'custom-class custom-loading',
     })
     return await loading.present()
   }
-
 }

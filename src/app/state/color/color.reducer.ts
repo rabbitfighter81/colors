@@ -2,7 +2,7 @@ import * as fromColor from './color.actions'
 import { Color } from './color.model'
 
 export interface State {
-  colors: Color[],
+  colors: Color[]
   loading: boolean
   error: string
 }
@@ -10,16 +10,18 @@ export interface State {
 export const initialState: State = {
   colors: [],
   loading: false,
-  error: ''
+  error: '',
 }
 
-export function reducer(state = initialState, action: fromColor.TodoActions): State {
+export function reducer(
+  state = initialState,
+  action: fromColor.TodoActions,
+): State {
   switch (action.type) {
-
     case fromColor.GET_ALL_COLORS: {
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     }
 
@@ -27,7 +29,7 @@ export function reducer(state = initialState, action: fromColor.TodoActions): St
       return {
         ...state,
         loading: false,
-        colors: action.payload
+        colors: action.payload,
       }
     }
 
@@ -35,21 +37,21 @@ export function reducer(state = initialState, action: fromColor.TodoActions): St
       return {
         ...state,
         loading: false,
-        error: 'error loading todos'
+        error: 'error loading todos',
       }
     }
 
     case fromColor.GET_COLOR: {
       return {
         ...state,
-        loading: true
+        loading: true,
       }
     }
 
     case fromColor.GET_COLOR_SUCCESS: {
       return {
         ...state,
-        loading: false
+        loading: false,
       }
     }
 
@@ -57,7 +59,7 @@ export function reducer(state = initialState, action: fromColor.TodoActions): St
       return {
         ...state,
         loading: false,
-        error: 'error loading todo'
+        error: 'error loading todo',
       }
     }
 

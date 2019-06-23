@@ -1,12 +1,10 @@
-import { LoadingController } from '@ionic/angular'
 import { HttpClientModule } from '@angular/common/http'
-import { ColorService } from './../../core/services/color.service'
-import { StateModule } from './../../state/state.module'
-import { AppState } from './../../state/app.reducer'
-import { StoreModule } from '@ngrx/store'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { LoadingController } from '@ionic/angular'
+import { StoreModule } from '@ngrx/store'
+import { ColorService } from './../../core/services/color.service'
+import { StateModule } from './../../state/state.module'
 import { HomePage } from './home.page'
 
 describe('HomePage', () => {
@@ -15,14 +13,10 @@ describe('HomePage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        StoreModule,
-        StateModule,
-        HttpClientModule,
-      ],
+      imports: [StoreModule, StateModule, HttpClientModule],
       declarations: [HomePage],
-      providers: [ ColorService, LoadingController ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ColorService, LoadingController],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents()
   }))
 

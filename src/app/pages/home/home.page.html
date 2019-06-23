@@ -1,22 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-title>About</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-
-  <ion-list class="list">
-    <ion-item class="list-item" *ngFor="let color of (colors$|async)">
-      <div class="roundy-thingy" [style.backgroundColor]="color.code"></div>
-      <div class="list-item-column">
-        <h2>{{ color.name }}</h2>
-        <p>{{ color.code }}</p>
-      </div>
-      <span class="spacer"></span>
-      <div class="list-item-column">
-        <ion-button fill="outline" item-end color="dark" (click)="presentLoading()">View</ion-button>
-      </div>
-    </ion-item>
-  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Color App</ion-card-subtitle>
+      <ion-card-title>All of the named colors in HTML</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

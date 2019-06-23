@@ -1,42 +1,38 @@
-import { HttpClientModule } from '@angular/common/http'
 import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 import {
   ModuleWithProviders,
   NgModule,
   Optional,
-  SkipSelf
+  SkipSelf,
 } from '@angular/core'
-
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { InMemoryDataService } from '../core/in-memory-data.service'
-
 import { ColorService } from './services/color.service'
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 }),
   ],
-  providers: [
-    ColorService
-  ]
+  providers: [ColorService],
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: CoreModule
+      ngModule: CoreModule,
     }
   }
 
   constructor(
     @Optional()
     @SkipSelf()
-    parentModule: CoreModule
+    parentModule: CoreModule,
   ) {
     if (parentModule) {
       throw new Error(
-        'CoreModule is already loaded. Import it in the AppModule only'
+        'CoreModule is already loaded. Import it in the AppModule only',
       )
     }
   }

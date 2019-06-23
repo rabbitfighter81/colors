@@ -1,9 +1,8 @@
-import { LoadingController } from '@ionic/angular'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-
-import { AboutPage } from './about.page'
+import { LoadingController } from '@ionic/angular'
 import { StoreModule } from '@ngrx/store'
+import { AboutPage } from './about.page'
 
 describe('AboutPage', () => {
   let component: AboutPage
@@ -11,12 +10,9 @@ describe('AboutPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutPage ],
-      providers: [
-        LoadingController,
-        StoreModule
-      ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      declarations: [AboutPage],
+      providers: [LoadingController, StoreModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents()
   }))
 

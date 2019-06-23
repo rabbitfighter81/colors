@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
+import { RouteReuseStrategy } from '@angular/router'
 import { SplashScreen } from '@ionic-native/splash-screen/ngx'
 import { StatusBar } from '@ionic-native/status-bar/ngx'
-
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-
-import { RouterModule, RouteReuseStrategy, Routes } from '@angular/router'
-import { StateModule } from './state/state.module'
 import { CoreModule } from './core/core.module'
-import { ComponentsModule } from './components/components.module'
+import { StateModule } from './state/state.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,13 +17,13 @@ import { ComponentsModule } from './components/components.module'
     IonicModule.forRoot(),
     AppRoutingModule,
     StateModule.forRoot(),
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

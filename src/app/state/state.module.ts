@@ -1,8 +1,12 @@
 import { CommonModule } from '@angular/common'
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core'
+import {
+  ModuleWithProviders,
+  NgModule,
+  Optional,
+  SkipSelf,
+} from '@angular/core'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
-
 import { appReducer } from './app.reducer'
 import { ColorEffects } from './color/color.effects'
 
@@ -10,23 +14,22 @@ import { ColorEffects } from './color/color.effects'
   imports: [
     CommonModule,
     StoreModule.forRoot(appReducer),
-    EffectsModule.forRoot([ColorEffects])
+    EffectsModule.forRoot([ColorEffects]),
   ],
-  declarations: []
+  declarations: [],
 })
-
 export class StateModule {
-
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: StateModule
+      ngModule: StateModule,
     }
   }
 
   constructor(@Optional() @SkipSelf() parentModule: StateModule) {
     if (parentModule) {
       throw new Error(
-        'StateModule is already loaded. Import it in the AppModule only')
+        'StateModule is already loaded. Import it in the AppModule only',
+      )
     }
   }
 }

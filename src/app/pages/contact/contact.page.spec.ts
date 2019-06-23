@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-
 import { ContactPage } from './contact.page'
 
 describe('ContactPage', () => {
@@ -9,8 +8,8 @@ describe('ContactPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactPage ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      declarations: [ContactPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents()
   }))
 
