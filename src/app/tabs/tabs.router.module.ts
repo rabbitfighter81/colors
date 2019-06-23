@@ -1,42 +1,34 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { AboutPage } from '../pages/about/about.page'
+import { ColorsPage } from '../pages/colors/colors.page'
 import { ContactPage } from '../pages/contact/contact.page'
 import { HomePage } from '../pages/home/home.page'
 import { TabsPage } from './tabs.page'
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
         path: '',
-        redirectTo: '/tabs/(home:home)',
+        redirectTo: 'colors',
         pathMatch: 'full',
       },
       {
         path: 'home',
-        outlet: 'home',
         component: HomePage,
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage,
+        path: 'colors',
+        component: ColorsPage,
       },
       {
         path: 'contact',
-        outlet: 'contact',
         component: ContactPage,
       },
     ],
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/(home:home)',
-    pathMatch: 'full',
-  },
+  }
 ]
 
 @NgModule({

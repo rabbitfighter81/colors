@@ -2,22 +2,22 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { LoadingController } from '@ionic/angular'
 import { StoreModule } from '@ngrx/store'
-import { AboutPage } from './about.page'
+import { ColorsPage } from './colors.page'
 
-describe('AboutPage', () => {
-  let component: AboutPage
-  let fixture: ComponentFixture<AboutPage>
+describe('ColorsPage', () => {
+  let component: ColorsPage
+  let fixture: ComponentFixture<ColorsPage>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutPage],
+      declarations: [ColorsPage],
       providers: [LoadingController, StoreModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutPage)
+    fixture = TestBed.createComponent(ColorsPage)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

@@ -1,16 +1,14 @@
-import { Color } from './../../state/color/color.model'
-
 import { Component, OnInit } from '@angular/core'
-import { HtmlColors } from '../../../constants/html-colors'
-
 import { LoadingController } from '@ionic/angular'
+import { HtmlColors } from '../../../constants/html-colors'
+import { Color } from '../../state/color/color.model'
 
 @Component({
-  selector: 'app-about',
-  templateUrl: 'about.page.html',
-  styleUrls: ['about.page.scss'],
+  selector: 'app-colors',
+  templateUrl: 'colors.page.html',
+  styleUrls: ['colors.page.scss'],
 })
-export class AboutPage implements OnInit {
+export class ColorsPage implements OnInit {
   colors: Color[]
 
   constructor(public loadingController: LoadingController) {}
